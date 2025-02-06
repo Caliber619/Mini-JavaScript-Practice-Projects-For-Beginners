@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyClock</title>
+    <style>
+        .outerContainer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="outerContainer">
+    <h1>MY CLOCK</h1>
+    <textarea name="clock" id="clock">00:00:00</textarea>
+    <button id="start">Start Clock</button>
+</body>
+<script>
+    //get clock and button
+    const startButton = document.getElementById('start')
+    const clock = document.getElementById('clock');
+    let intervalId = null
+    //showing Time using setIntervalFunction
+    function startClock() {
+        if(!intervalId){
+            intervalId = setInterval(function(){
+                let date = new Date();
+                clock.innerHTML = date.toLocaleTimeString();
+            },1000)
+        }
+    }
+
+    startButton.addEventListener('click',function(event){
+        event.preventDefault();
+        startClock();
+    });
+
+</script>
+</html>

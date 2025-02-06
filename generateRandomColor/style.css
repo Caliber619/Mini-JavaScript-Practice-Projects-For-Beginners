@@ -1,0 +1,5 @@
+.bigbox{
+    display: flex;
+    background-color: #212121;
+    color: teal;
+}
